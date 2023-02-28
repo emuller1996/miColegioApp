@@ -1,0 +1,97 @@
+<div class="w-100">
+  <div class="card text-start">
+    <div class="card-body">
+      <div class="d-flex justify-content-start flex-row-reverse   align-items-center p-2">
+        <a type="button" routerLink="/alumnos/lista" class="align-items-center float-end btn btn-sm btn-danger"> <i class="fa-solid fa-chevron-left"></i></a>
+        <h4 class="card-title me-2 text-center m-auto w-100">Registro Nuevo Alumno</h4>
+      </div>
+      <hr>
+
+      <form action="">
+
+        <div class="row">
+          <small class="text-start mb-2 fw-bold">Informacion Personal</small>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="nombre" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="nombre">
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos">
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="Correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="Correo">
+          </div>
+
+
+
+          <small class="text-start mb-2 fw-bold">Documento Identidad</small>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="tipoDocumento" class="form-label">Tipo Documento</label>
+            <select id="tipoDocumento" class="form-select" aria-label="Default select example">
+              <option selected>SELECCIONE EL TIPO DE DOCUMENTO</option>
+              <option value="CC">CC : CEDULA DE CUIDADANIA.</option>
+              <option value="TI">TI : TARJETA DE IDENTIDAD.</option>
+              <option value="RC">RC : REGISTRO CIVIL.</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="numeroDocumento" class="form-label">Numero Documento</label>
+            <input type="number" class="form-control" id="numeroDocumento">
+          </div>
+
+
+          <small class="text-start mb-2 fw-bold">Datos Nacimiento</small>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="genero" class="form-label">Genero</label>
+            <select id="genero" class="form-select" aria-label="Default select example">
+              <option selected>SELECCIONE UN GENERO</option>
+              <option value="M">MASCULINO</option>
+              <option value="F">FEMENINO</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="fechaNacimiento" class="form-label">Fecha Nacimiento.</label>
+            <input type="date" class="form-control" id="fechaNacimiento">
+          </div>
+
+          <div class="col-12 col-md-6 mb-3">
+            <label for="departamentoNacimiento" class="form-label">Departamento de Nacimiento.</label>
+            <input type="text" class="form-control" id="departamentoNacimiento">
+          </div>
+
+          <div class="col-12 col-md-6 mb-3">
+            <label for="ciudadNacimiento" class="form-label">Cuidad de Nacimiento.</label>
+            <input type="text" class="form-control" id="ciudadNacimiento">
+          </div>
+
+          <small class="text-start mb-2 fw-bold">Direccion Residencia</small>
+          
+          <div class="col-12 col-md-6 mb-3">
+            <label for="direccion" class="form-label">Direccion.</label>
+            <input type="date" class="form-control" id="direccion">
+          </div>
+
+          <div class="col-12 col-md-6 mb-3">
+            <label for="barrio" class="form-label">Barrio.</label>
+            <input type="text" class="form-control" id="barrio">
+          </div>
+
+          <div class="col-12 col-md-6 mb-3">
+            <label for="telefono" class="form-label">Telono.</label>
+            <input type="number" class="form-control" id="telefono">
+          </div>
+
+        </div>
+
+
+
+
+
+      </form>
+
+
+    </div>
+  </div>
+</div>
