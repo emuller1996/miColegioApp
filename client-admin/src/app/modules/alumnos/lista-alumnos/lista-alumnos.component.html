@@ -1,4 +1,5 @@
 <div class="w-100">
+
   <div class="card text-center">
     <div class="card-body">
       <div class="row justify-content-start align-items-start g-2 mb-3">
@@ -18,16 +19,19 @@
       <hr class=" border-primary">
 
       <div class="row row-cols-2 justify-content-start align-items-center g-3">
-        <div class="col-12 col-md-6">
+
+        <div *ngFor="let a of listaAlumnos |async " class="col-12 col-md-6">
           <div class="card border-primary text-start">
             <div class="card-body">
-              <h4 class="card-title p-0 m-0 fw-semibold">Nombre Alumno</h4>
-              <div class="row justify-content-start align-items-start g-2">
-                <div class="col-2">CC</div>
-                <div class="col-7">NumeroDocumento</div>
-                <div class="col-3">Generso</div>
-                <div class="col-12 text-center">
-                  <a name="" id="" class="btn btn-primary"  role="button">Ver</a>
+              <h4 class="card-title p-0 m-0 fw-semibold">{{a.nombres}} {{a.apellidos}} </h4>
+              <div class="row justify-content-start align-items-center g-2">
+                <div class="col-2">{{a.tipoDocumento}}</div>
+                <div class="col-7">{{a.numeroDocumento | number}}</div>
+                <div class="col-3">Genero : {{a.genero}}</div>
+                
+                <div class="col-8">Direccion : {{a.direccionResidencia}} {{ a.barrioResidencia }}</div>
+                <div class="col-4 text-center">
+                  <a  [routerLink]="['/alumnos/editar',a.id]" name="" id="" class="btn btn-sm btn-primary w-100"  role="button">Ver</a>
                 </div>
 
               </div>

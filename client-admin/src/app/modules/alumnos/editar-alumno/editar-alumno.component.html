@@ -3,11 +3,11 @@
     <div class="card-body">
       <div class="d-flex justify-content-start flex-row-reverse   align-items-center p-2">
         <a type="button" routerLink="/alumnos/lista" class="align-items-center float-end btn btn-sm btn-danger"> <i class="fa-solid fa-chevron-left"></i></a>
-        <h4 class="card-title me-2 text-center m-auto w-100">Registro Nuevo Alumno</h4>
+        <h4 class="card-title me-2 text-center m-auto w-100">Actualizando Alumno</h4>
       </div>
       <hr>
 
-      <form [formGroup]="formAlumno" (ngSubmit)="onSaveAlumno()">
+      <form  (ngSubmit)="onUpdateAlumno()"> 
 
         <div class="row">
           <small class="text-start mb-2 fw-bold">Informacion Personal</small>
@@ -17,23 +17,22 @@
             class="form-control" 
             id="nombres"
             name="nombres"
-            formControlName="nombres"           
+            [(ngModel)]="alumno.nombres"         
             >
 
-            <div class="ms-2 text-danger fw-bold form-text" [hidden]="formAlumno.get('nombres')?.valid || formAlumno.get('nombres')?.pristine" >los Nombres del estudiante son requeridos. </div>
-
+            
           </div>
           <div class="col-12 col-md-6 mb-3">
             <label for="apellidos" class="form-label">Apellidos</label>
             <input type="text" class="form-control" id="apellidos"
             name="apellidos"
-            formControlName="apellidos">
+            [(ngModel)]="alumno.apellidos">
           </div>
           <div class="col-12 col-md-6 mb-3">
             <label for="Correo" class="form-label">Correo</label>
             <input type="email" class="form-control" id="Correo"
             name="correo"
-            formControlName="correo">
+            [(ngModel)]="alumno.correo">
           </div>
 
 
@@ -43,7 +42,7 @@
             <label for="tipoDocumento" class="form-label">Tipo Documento</label>
             <select id="tipoDocumento" class="form-select" aria-label="Default select example"
             name="tipoDocumento"
-            formControlName="tipoDocumento">
+            [(ngModel)]="alumno.tipoDocumento">
               <option selected>SELECCIONE EL TIPO DE DOCUMENTO</option>
               <option ngValue="CC" >CC : CEDULA DE CUIDADANIA.</option>
               <option value="TI">TI : TARJETA DE IDENTIDAD.</option>
@@ -54,7 +53,7 @@
             <label for="numeroDocumento" class="form-label">Numero Documento</label>
             <input type="number" class="form-control" id="numeroDocumento"
             name="numeroDocumento"
-            formControlName="numeroDocumento">
+            [(ngModel)]="alumno.numeroDocumento">
           </div>
 
 
@@ -63,7 +62,7 @@
             <label for="genero" class="form-label">Genero</label>
             <select id="genero" class="form-select" aria-label="Default select example"
             name="genero"
-            formControlName="genero">
+            [(ngModel)]="alumno.genero">
               <option selected>SELECCIONE UN GENERO</option>
               <option value="M">MASCULINO</option>
               <option value="F">FEMENINO</option>
@@ -73,21 +72,21 @@
             <label for="fechaNacimiento" class="form-label">Fecha Nacimiento.</label>
             <input type="date" class="form-control" id="fechaNacimiento"
             name="fechaNacimiento"
-            formControlName="fechaNacimiento">
+            [(ngModel)]="alumno.fechaNacimiento">
           </div>
 
           <div class="col-12 col-md-6 mb-3">
             <label for="departamentoNacimiento" class="form-label">Departamento de Nacimiento.</label>
             <input type="text" class="form-control" id="departamentoNacimiento"
             name="departamentoNacimiento"
-            formControlName="departamentoNacimiento">
+            [(ngModel)]="alumno.departamentoNacimiento">
           </div>
 
           <div class="col-12 col-md-6 mb-3">
             <label for="ciudadNacimiento" class="form-label">Cuidad de Nacimiento.</label>
             <input type="text" class="form-control" id="ciudadNacimiento"
             name="ciudadNacimiento"
-            formControlName="ciudadNacimiento">
+            [(ngModel)]="alumno.ciudadNacimiento">
           </div>
 
           <small class="text-start mb-2 fw-bold">Direccion Residencia</small>
@@ -96,21 +95,21 @@
             <label for="direccion" class="form-label">Direccion.</label>
             <input type="text" class="form-control" id="direccion"
             name="direccionResidencia"
-            formControlName="direccionResidencia">
+            [(ngModel)]="alumno.direccionResidencia">
           </div>
 
           <div class="col-12 col-md-6 mb-3">
             <label for="barrio" class="form-label">Barrio.</label>
             <input type="text" class="form-control" id="barrio"
             name="barrioResidencia"
-            formControlName="barrioResidencia">
+            [(ngModel)]="alumno.barrioResidencia">
           </div>
 
           <div class="col-12 col-md-6 mb-3">
             <label for="telefono" class="form-label">Telono.</label>
             <input type="number" class="form-control" id="telefono"
             name="telefono"
-            formControlName="telefono">
+            [(ngModel)]="alumno.telefono">
           </div>
 
           <div class="col-12 mb-3 text-center">
@@ -128,7 +127,7 @@
       </form>
 
 
-      {{ formAlumno.value | json }}
+      {{ alumno | json }}
     </div>
   </div>
 </div>
