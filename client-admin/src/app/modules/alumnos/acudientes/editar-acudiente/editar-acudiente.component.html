@@ -1,0 +1,128 @@
+<div class="w-100">
+    <div class="card text-start">
+      <div class="card-body">
+        <div
+          class="d-flex justify-content-start flex-row-reverse align-items-center p-2"
+        >
+          <a
+            type="button"
+            [routerLink]="['/alumnos/editar', alumnoId, 'acudientes']"
+            routerLinkActive="router-link-active"
+            class="align-items-center float-end btn btn-sm btn-danger"
+          >
+            <i class="fa-solid fa-chevron-left"></i
+          ></a>
+          <h4 class="card-title me-2 text-center m-auto w-100">
+            Actualizando Acudiente
+          </h4>
+        </div>
+        <hr />
+        <form action="" (ngSubmit)="onUpdateAcudiente()" >
+          <div class="row align-items-end">
+            <div class="col-12 col-md-6 mb-3">
+              <label for="nombres" class="form-label">Nombres</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombres"
+                name="nombres"
+                [(ngModel)]="acudienteInser.nombres"
+              />
+            </div>
+  
+            <div class="col-12 col-md-6 mb-3">
+              <label for="apellidos" class="form-label">Apellidos</label>
+              <input
+                type="text"
+                class="form-control"
+                id="apellidos"
+                name="apellidos"
+                [(ngModel)]="acudienteInser.apellidos"
+              />
+            </div>
+  
+            <div class="col-12 mb-3">
+              <label for="correo" class="form-label">Correo</label>
+              <input
+                type="text"
+                class="form-control"
+                id="correo"
+                name="correo"
+                [(ngModel)]="acudienteInser.correo"
+              />
+            </div>
+  
+            <div class="col-12 col-md-6 mb-3">
+              <label for="tipoDocumento" class="form-label">Tipo Documento</label>
+              <select
+                id="tipoDocumento"
+                class="form-select"
+                aria-label="Default select example"
+                name="tipoDocumento"
+                [(ngModel)]="acudienteInser.tipoDocumento"
+              >
+                <option selected>SELECCIONE EL TIPO DE DOCUMENTO</option>
+                <option ngValue="CC">CC : CEDULA DE CUIDADANIA.</option>
+                <option value="TI">TI : TARJETA DE IDENTIDAD.</option>
+                <option value="RC">RC : REGISTRO CIVIL.</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label for="numeroDocumento" class="form-label"
+                >Numero Documento</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="numeroDocumento"
+                name="numeroDocumento"
+                [(ngModel)]="acudienteInser.numeroDocumento"
+              />
+            </div>
+  
+            <div class="col-12 col-md-6 mb-3">
+              <label for="parentesco" class="form-label">Parentesco</label>
+              <input
+                type="text"
+                class="form-control"
+                id="parentesco"
+                name="parentesco"
+                [(ngModel)]="acudienteInser.parentesco"
+              />
+            </div>
+  
+            <div class="col-12 col-md-6 mb-3">
+              <label for="telefono" class="form-label">Telefono</label>
+              <input
+                type="number"
+                class="form-control"
+                id="telefono"
+                name="telefono"
+                [(ngModel)]="acudienteInser.telefono"
+              />
+            </div>
+  
+            <div class="col-12 col-md-6 mb-3">
+  
+              <div class="form-check form-switch">
+                <input 
+                id="esPrincipal"
+                name="esPrincipal"
+                [(ngModel)]="acudienteInser.esPrincipal"
+                class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">es Principal?</label>
+              </div>
+              
+            </div>
+  
+            <div class="col-12  mb-3">
+  
+              <input type="submit" class="btn btn-primary" value="Guardar Acudiente">
+              
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

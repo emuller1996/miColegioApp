@@ -18,10 +18,17 @@
       </div>
       <hr class=" border-primary">
 
+      <div *ngIf="!listaAlumnos" class="container mx-auto text-center py-3">
+        <div  class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div> 
+      
       <div class="row row-cols-2 justify-content-start align-items-center g-3">
-
-        <div *ngFor="let a of listaAlumnos |async " class="col-12 col-md-6">
-          <div class="card border-primary text-start">
+        
+        
+        <div *ngFor="let a of listaAlumnos" class="col-12 col-md-6">
+          <div class="card card-alumno border-primary text-start">
             <div class="card-body">
               <h4 class="card-title p-0 m-0 fw-semibold">{{a.nombres}} {{a.apellidos}} </h4>
               <div class="row justify-content-start align-items-center g-2">

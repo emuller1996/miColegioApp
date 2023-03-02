@@ -12,7 +12,7 @@ export class AlumnoModel{
     ciudadNacimiento:string;
     direccionResidencia:string;
     barrioResidencia:string;
-    telefono:number;
+    telefono:bigint;
 
 
 

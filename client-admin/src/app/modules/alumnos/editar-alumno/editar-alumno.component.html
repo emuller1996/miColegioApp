@@ -7,9 +7,13 @@
       </div>
       <hr>
 
-
-
-      <form  (ngSubmit)="onUpdateAlumno()">
+      <div *ngIf="!alumno" class="container mx-auto text-center py-2">
+        <div  class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div *ngIf="alumno">
+        <form  (ngSubmit)="onUpdateAlumno()">
 
         <div class="row justify-content-start align-items-end">
           <small class="text-start mb-2 fw-bold">Informacion Personal</small>
@@ -131,6 +135,10 @@
 
 
       </form>
+
+      </div>
+
+      
 
 
       {{ alumno | json }}

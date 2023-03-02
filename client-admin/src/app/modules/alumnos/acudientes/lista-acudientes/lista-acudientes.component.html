@@ -1,37 +1,48 @@
-
-
 <div class="w-100">
   <div class="card text-start">
     <div class="card-body">
       <div class="d-flex justify-content-center align-items-center my-2">
-        <p class="w-100 text-center">Acudientes del Estudiante  {{alumnoAcudiente.nombres }} {{alumnoAcudiente.apellidos}}  </p>
-        <a [routerLink]="['/alumnos/editar',alumnoId]" routerLinkActive="router-link-active"  type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-chevron-left"></i></a>
+        <p class="w-100 text-center">Acudientes del Estudiante {{alumnoAcudiente.nombres }}
+          {{alumnoAcudiente.apellidos}} </p>
+        <a [routerLink]="['/alumnos/editar',alumnoId]" routerLinkActive="router-link-active" type="button"
+          class="btn btn-sm btn-danger"><i class="fa-solid fa-chevron-left"></i></a>
       </div>
 
       <div class="row justify-content-start align-items-center g-2 mb-2">
         <div class="col">
-          <a [routerLink]="['/alumnos/editar',alumnoId,'acudientes','crear']" routerLinkActive="router-link-active"  class="btn btn-primary" role="button">Agregar Acudiente</a>
+          <a [routerLink]="['/alumnos/editar',alumnoId,'acudientes','crear']" routerLinkActive="router-link-active"
+            class="btn btn-primary" role="button">Agregar Acudiente</a>
         </div>
+
+
 
       </div>
 
+      <div *ngIf="!listaAcudiente" class="container mx-auto text-center py-2">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
 
-      <h4 *ngIf="listaAcudiente  &&listaAcudiente.length === 0 " class="text-center">  No tiene Acudientes</h4>
-      <div  *ngFor="let a of listaAcudiente" class="card text-start">
+
+      <h4 *ngIf="listaAcudiente  &&listaAcudiente.length === 0 " class="text-center"> No tiene Acudientes</h4>
+      <div *ngFor="let a of listaAcudiente" class="card card-acudiente text-start mb-2">
         <div class="card-body">
 
           <div class="row justify-content-start align-items-center g-2">
             <div class="col fw-semibold">{{a.nombres }} {{a.apellidos}}</div>
-            <div class="col">{{a.tipoDocumento}} {{a.numeroDocumento |number}}  </div>
+            <div class="col">{{a.tipoDocumento}} {{a.numeroDocumento |number}} </div>
             <div class="col"> Parentesco : {{a.parentesco}}</div>
-            <div class="col">  <span class="badge bg-success">Principal</span> </div>
+            <div class="col"> <span *ngIf="a.esPrincipal" class="badge bg-success">Principal</span> </div>
+            <div class="col">
+              <a [routerLink]="['/alumnos/editar',alumnoId,'acudientes','editar',a.id]" routerLinkActive="router-link-active"
+                class="btn btn-sm btn-warning text-white" role="button"><i class="fa-regular fa-pen-to-square"></i></a>
+            </div>
           </div>
 
         </div>
       </div>
 
-
-      {{ listaAcudiente | json }}
     </div>
   </div>
 </div>

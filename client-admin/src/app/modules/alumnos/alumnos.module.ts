@@ -7,6 +7,7 @@ import { CrearAlumnosComponent } from './crear-alumnos/crear-alumnos.component';
 import { EditarAlumnoComponent } from './editar-alumno/editar-alumno.component';
 import { ListaAcudientesComponent } from './acudientes/lista-acudientes/lista-acudientes.component';
 import { CrearAcudientesComponent } from './acudientes/crear-acudientes/crear-acudientes.component';
+import { EditarAcudienteComponent } from './acudientes/editar-acudiente/editar-acudiente.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CrearAcudientesComponent } from './acudientes/crear-acudientes/crear-ac
     CrearAlumnosComponent,
     EditarAlumnoComponent,
     ListaAcudientesComponent,
-    CrearAcudientesComponent
+    CrearAcudientesComponent,
+    EditarAcudienteComponent
   ],
   imports: [
     CommonModule,

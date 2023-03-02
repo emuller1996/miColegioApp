@@ -17,7 +17,7 @@
         </h4>
       </div>
       <hr />
-      <form action="">
+      <form action="" (ngSubmit)="onSaveAcudiente()" >
         <div class="row align-items-end">
           <div class="col-12 col-md-6 mb-3">
             <label for="nombres" class="form-label">Nombres</label>
@@ -81,33 +81,44 @@
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="correo" class="form-label">Parentesco</label>
+            <label for="parentesco" class="form-label">Parentesco</label>
             <input
               type="text"
               class="form-control"
-              id="correo"
+              id="parentesco"
               name="parentesco"
               [(ngModel)]="acudienteInser.parentesco"
             />
           </div>
 
           <div class="col-12 col-md-6 mb-3">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input
+              type="number"
+              class="form-control"
+              id="telefono"
+              name="telefono"
+              [(ngModel)]="acudienteInser.telefono"
+            />
+          </div>
+
+          <div class="col-12 col-md-6 mb-3">
 
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-              <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-            </div>
-            <input
-              class="form-check-input"
-              type="checkbox"
-              role="switch"
+              <input 
               id="esPrincipal"
               name="esPrincipal"
               [(ngModel)]="acudienteInser.esPrincipal"
-            />
-            <label class="form-check-label" for="esPrincipal"
-              >Default switch checkbox input</label
-            >
+              class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+              <label class="form-check-label" for="flexSwitchCheckChecked">es Principal?</label>
+            </div>
+            
+          </div>
+
+          <div class="col-12  mb-3">
+
+            <input type="submit" class="btn btn-primary" value="Guardar Acudiente">
+            
           </div>
         </div>
       </form>

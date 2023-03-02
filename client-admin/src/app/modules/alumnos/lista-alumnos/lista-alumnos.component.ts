@@ -10,7 +10,7 @@ import { AlumnoService } from "../../../services/alumno/alumno.service";
 })
 export class ListaAlumnosComponent  implements OnInit {
 
-  listaAlumnos!  : Observable<AlumnoModel[]>;
+  listaAlumnos : AlumnoModel[];
 
 
   constructor(
@@ -19,7 +19,9 @@ export class ListaAlumnosComponent  implements OnInit {
 
 
   ngOnInit(): void {
-    this.listaAlumnos = this.alumnoService.getAlumnos();
+    this.alumnoService.getAlumnos().subscribe(data=>{
+      this.listaAlumnos = data;
+    });
     console.log(this.listaAlumnos)
   }
 

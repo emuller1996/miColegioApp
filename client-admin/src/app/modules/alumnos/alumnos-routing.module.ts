@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearAcudientesComponent } from './acudientes/crear-acudientes/crear-acudientes.component';
+import { EditarAcudienteComponent } from './acudientes/editar-acudiente/editar-acudiente.component';
 import { ListaAcudientesComponent } from './acudientes/lista-acudientes/lista-acudientes.component';
 import { CrearAlumnosComponent } from './crear-alumnos/crear-alumnos.component';
 import { EditarAlumnoComponent } from './editar-alumno/editar-alumno.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'editar/:idAlumno/acudientes/crear',
     component: CrearAcudientesComponent
+  },
+  {
+    path:'editar/:idAlumno/acudientes/editar/:id',
+    component: EditarAcudienteComponent
   }
 ];
 

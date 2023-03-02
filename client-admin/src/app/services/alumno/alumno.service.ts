@@ -34,6 +34,7 @@ export class AlumnoService {
 
     return this.http.get<AlumnoModel[]>('http://localhost:3000/alumnos?filter='+strin);
 
+     
 
   }
 

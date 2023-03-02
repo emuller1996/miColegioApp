@@ -9,6 +9,7 @@ export class AcudienteModel{
   parentesco:string;
   correo:string;
   esPrincipal:boolean
+  telefono:bigint;
 
 
 
