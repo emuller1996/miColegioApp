@@ -7,20 +7,22 @@
       </div>
       <hr>
 
-      <form  (ngSubmit)="onUpdateAlumno()"> 
 
-        <div class="row">
+
+      <form  (ngSubmit)="onUpdateAlumno()">
+
+        <div class="row justify-content-start align-items-end">
           <small class="text-start mb-2 fw-bold">Informacion Personal</small>
           <div class="col-12 col-md-6 mb-3">
             <label for="nombres" class="form-label">Nombres</label>
-            <input type="text" 
-            class="form-control" 
+            <input type="text"
+            class="form-control"
             id="nombres"
             name="nombres"
-            [(ngModel)]="alumno.nombres"         
+            [(ngModel)]="alumno.nombres"
             >
 
-            
+
           </div>
           <div class="col-12 col-md-6 mb-3">
             <label for="apellidos" class="form-label">Apellidos</label>
@@ -90,7 +92,7 @@
           </div>
 
           <small class="text-start mb-2 fw-bold">Direccion Residencia</small>
-          
+
           <div class="col-12 col-md-6 mb-3">
             <label for="direccion" class="form-label">Direccion.</label>
             <input type="text" class="form-control" id="direccion"
@@ -112,6 +114,10 @@
             [(ngModel)]="alumno.telefono">
           </div>
 
+          <div class="col-12  col-md-6 mb-3">
+            <a name="" id="" class="btn btn-sm btn-primary h-full" [routerLink]="['/alumnos/editar',alumno.id,'acudientes']" routerLinkActive="router-link-active"  role="button">Ver Acudientes</a>
+          </div>
+
           <div class="col-12 mb-3 text-center">
             <input type="submit" class="w-50 btn btn-success" >
           </div>
@@ -128,6 +134,9 @@
 
 
       {{ alumno | json }}
+
+
+
     </div>
   </div>
 </div>
