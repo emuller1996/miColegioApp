@@ -5,9 +5,8 @@
       <div class="row justify-content-start align-items-start g-2 mb-3">
         <div class="col-auto">
           <a
-            name=""
-            id=""
-            class="btn btn-secondary"
+            mat-raised-button
+            color="primary"
             routerLink="/alumnos/crear"
             role="button"
           >
@@ -22,12 +21,32 @@
         <div  class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
-      </div> 
-      
-      <div class="row row-cols-2 justify-content-start align-items-center g-3">
-        
-        
-        <div *ngFor="let a of listaAlumnos" class="col-12 col-md-6">
+      </div>
+
+      <div class="row row-cols-3 justify-content-start align-items-center g-3">
+
+        <div *ngFor="let a of listaAlumnos" class="col-12 col-xl-4 col-md-6">
+        <mat-card class="card-alumno">
+          <mat-card-content>
+            <h4 class="card-title p-0 m-0 fw-semibold">{{a.nombres}} {{a.apellidos}} </h4>
+              <div class="row justify-content-start align-items-center g-2">
+                <div class="col-2">{{a.tipoDocumento}}</div>
+                <div class="col-7">{{a.numeroDocumento | number}}</div>
+                <div class="col-3">Genero : {{a.genero}}</div>
+
+                <div class="col-8">Direccion : {{a.direccionResidencia}} {{ a.barrioResidencia }}</div>
+                <div class="col-4 text-center">
+
+                  <a mat-raised-button color="accent" [routerLink]="['/alumnos/editar',a.id]" name="" id=""  role="button"><i class="fa-regular fa-eye"></i></a>
+                </div>
+
+              </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+        <!-- <div *ngFor="let a of listaAlumnos" class="col-12 col-md-6">
           <div class="card card-alumno border-primary text-start">
             <div class="card-body">
               <h4 class="card-title p-0 m-0 fw-semibold">{{a.nombres}} {{a.apellidos}} </h4>
@@ -35,7 +54,7 @@
                 <div class="col-2">{{a.tipoDocumento}}</div>
                 <div class="col-7">{{a.numeroDocumento | number}}</div>
                 <div class="col-3">Genero : {{a.genero}}</div>
-                
+
                 <div class="col-8">Direccion : {{a.direccionResidencia}} {{ a.barrioResidencia }}</div>
                 <div class="col-4 text-center">
                   <a  [routerLink]="['/alumnos/editar',a.id]" name="" id="" class="btn btn-sm btn-primary w-100"  role="button">Ver</a>
@@ -44,7 +63,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
 

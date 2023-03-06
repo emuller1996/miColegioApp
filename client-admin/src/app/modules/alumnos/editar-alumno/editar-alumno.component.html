@@ -2,7 +2,7 @@
   <div class="card text-start">
     <div class="card-body">
       <div class="d-flex justify-content-start flex-row-reverse   align-items-center p-2">
-        <a type="button" routerLink="/alumnos/lista" class="align-items-center float-end btn btn-sm btn-danger"> <i class="fa-solid fa-chevron-left"></i></a>
+        <a mat-raised-button color="warn" type="button" routerLink="/alumnos/lista" class="align-items-center float-end btn btn-sm btn-danger"> <i class="fa-solid fa-chevron-left"></i></a>
         <h4 class="card-title me-2 text-center m-auto w-100">Actualizando Alumno</h4>
       </div>
       <hr>
@@ -15,37 +15,76 @@
       <div *ngIf="alumno">
         <form  (ngSubmit)="onUpdateAlumno()">
 
-        <div class="row justify-content-start align-items-end">
+        <div class="row justify-content-start align-items-center">
           <small class="text-start mb-2 fw-bold">Informacion Personal</small>
+
           <div class="col-12 col-md-6 mb-3">
-            <label for="nombres" class="form-label">Nombres</label>
-            <input type="text"
-            class="form-control"
-            id="nombres"
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Nombres</mat-label>
+              <input matInput
+              id="nombres"
             name="nombres"
             [(ngModel)]="alumno.nombres"
-            >
 
-
+              >
+            </mat-form-field>
           </div>
+
+
           <div class="col-12 col-md-6 mb-3">
-            <label for="apellidos" class="form-label">Apellidos</label>
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Apellidos</mat-label>
+              <input matInput
+              id="apellidos"
+            name="apellidos"
+            [(ngModel)]="alumno.apellidos"
+              >
+            </mat-form-field>
+
+            <!-- <label for="apellidos" class="form-label">Apellidos</label>
             <input type="text" class="form-control" id="apellidos"
             name="apellidos"
-            [(ngModel)]="alumno.apellidos">
+            [(ngModel)]="alumno.apellidos"> -->
           </div>
           <div class="col-12 col-md-6 mb-3">
-            <label for="Correo" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="Correo"
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Correo</mat-label>
+              <input matInput
+              id="Correo"
             name="correo"
             [(ngModel)]="alumno.correo">
+            </mat-form-field>
+
+            <!-- <label for="Correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="Correo"
+            name="correo"
+            [(ngModel)]="alumno.correo"> -->
           </div>
 
 
 
           <small class="text-start mb-2 fw-bold">Documento Identidad</small>
           <div class="col-12 col-md-6 mb-3">
-            <label for="tipoDocumento" class="form-label">Tipo Documento</label>
+
+
+            <mat-form-field appearance="fill" class="w-100" >
+              <mat-label>Tipo Documento</mat-label>
+              <mat-select
+              id="tipoDocumento"
+              name="tipoDocumento"
+              [(ngModel)]="alumno.tipoDocumento">
+                <mat-option  value='CC'>CC : CEDULA DE CUIDADANIA.</mat-option>
+                <mat-option  value='TI'>TI : TARJETA DE IDENTIDAD. </mat-option>
+                <mat-option  value='RC'>RC : REGISTRO CIVIL. </mat-option>
+
+
+              </mat-select>
+            </mat-form-field>
+
+
+            <!-- <label for="tipoDocumento" class="form-label">Tipo Documento</label>
             <select id="tipoDocumento" class="form-select" aria-label="Default select example"
             name="tipoDocumento"
             [(ngModel)]="alumno.tipoDocumento">
@@ -53,77 +92,163 @@
               <option ngValue="CC" >CC : CEDULA DE CUIDADANIA.</option>
               <option value="TI">TI : TARJETA DE IDENTIDAD.</option>
               <option value="RC">RC : REGISTRO CIVIL.</option>
-            </select>
+            </select> -->
           </div>
           <div class="col-12 col-md-6 mb-3">
-            <label for="numeroDocumento" class="form-label">Numero Documento</label>
-            <input type="number" class="form-control" id="numeroDocumento"
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Numero Documento</mat-label>
+              <input matInput
+              id="numeroDocumento"
             name="numeroDocumento"
             [(ngModel)]="alumno.numeroDocumento">
+            </mat-form-field>
+
+            <!-- <label for="numeroDocumento" class="form-label">Numero Documento</label>
+            <input type="number" class="form-control" id="numeroDocumento"
+            name="numeroDocumento"
+            [(ngModel)]="alumno.numeroDocumento"> -->
           </div>
 
 
           <small class="text-start mb-2 fw-bold">Datos Nacimiento</small>
           <div class="col-12 col-md-6 mb-3">
-            <label for="genero" class="form-label">Genero</label>
+
+
+            <mat-form-field appearance="fill" class="w-100" >
+              <mat-label>Genero</mat-label>
+              <mat-select
+                id="genero"
+                name="genero"
+                [(ngModel)]="alumno.genero">
+                <mat-option  value='M'>MASCULINO</mat-option>
+                <mat-option  value='F'>FEMENINO</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- <label for="genero" class="form-label">Genero</label>
             <select id="genero" class="form-select" aria-label="Default select example"
             name="genero"
             [(ngModel)]="alumno.genero">
               <option selected>SELECCIONE UN GENERO</option>
               <option value="M">MASCULINO</option>
               <option value="F">FEMENINO</option>
-            </select>
+            </select> -->
           </div>
           <div class="col-12 col-md-6 mb-3">
-            <label for="fechaNacimiento" class="form-label">Fecha Nacimiento.</label>
+
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Fecha Nacimiento.</mat-label>
+              <input matInput [matDatepicker]="picker"
+              id="fechaNacimiento"
+            name="fechaNacimiento"
+            [(ngModel)]="alumno.fechaNacimiento"
+              >
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <!-- <label for="fechaNacimiento" class="form-label">Fecha Nacimiento.</label>
             <input type="date" class="form-control" id="fechaNacimiento"
             name="fechaNacimiento"
-            [(ngModel)]="alumno.fechaNacimiento">
+            [(ngModel)]="alumno.fechaNacimiento"> -->
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="departamentoNacimiento" class="form-label">Departamento de Nacimiento.</label>
-            <input type="text" class="form-control" id="departamentoNacimiento"
-            name="departamentoNacimiento"
-            [(ngModel)]="alumno.departamentoNacimiento">
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Departamento de Nacimiento.</mat-label>
+              <input matInput
+              type="text"
+              id="departamentoNacimiento"
+              name="departamentoNacimiento"
+              [(ngModel)]="alumno.departamentoNacimiento">
+            </mat-form-field>
+
+              <!-- <label for="departamentoNacimiento" class="form-label">Departamento de Nacimiento.</label>
+              <input type="text" class="form-control" id="departamentoNacimiento"
+              name="departamentoNacimiento"
+              [(ngModel)]="alumno.departamentoNacimiento"> -->
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="ciudadNacimiento" class="form-label">Cuidad de Nacimiento.</label>
-            <input type="text" class="form-control" id="ciudadNacimiento"
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Cuidad de Nacimiento.</mat-label>
+              <input matInput
+              type="text"
+              id="ciudadNacimiento"
             name="ciudadNacimiento"
             [(ngModel)]="alumno.ciudadNacimiento">
+            </mat-form-field>
+
+            <!-- <label for="ciudadNacimiento" class="form-label">Cuidad de Nacimiento.</label>
+            <input type="text" class="form-control" id="ciudadNacimiento"
+            name="ciudadNacimiento"
+            [(ngModel)]="alumno.ciudadNacimiento"> -->
           </div>
 
           <small class="text-start mb-2 fw-bold">Direccion Residencia</small>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="direccion" class="form-label">Direccion.</label>
-            <input type="text" class="form-control" id="direccion"
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Direccion</mat-label>
+              <input matInput
+              type="text"
+              id="direccion"
             name="direccionResidencia"
             [(ngModel)]="alumno.direccionResidencia">
+            </mat-form-field>
+
+            <!-- <label for="direccion" class="form-label">Direccion.</label>
+            <input type="text" class="form-control" id="direccion"
+            name="direccionResidencia"
+            [(ngModel)]="alumno.direccionResidencia"> -->
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="barrio" class="form-label">Barrio.</label>
-            <input type="text" class="form-control" id="barrio"
+
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Direccion</mat-label>
+              <input matInput
+              type="text"
+              id="barrio"
             name="barrioResidencia"
             [(ngModel)]="alumno.barrioResidencia">
+            </mat-form-field>
+
+            <!-- <label for="barrio" class="form-label">Barrio.</label>
+            <input type="text" class="form-control" id="barrio"
+            name="barrioResidencia"
+            [(ngModel)]="alumno.barrioResidencia"> -->
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="telefono" class="form-label">Telono.</label>
-            <input type="number" class="form-control" id="telefono"
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Telefono</mat-label>
+              <input matInput
+              type="number"
+              id="telefono"
             name="telefono"
             [(ngModel)]="alumno.telefono">
+            </mat-form-field>
+
+            <!-- <label for="telefono" class="form-label">Telono.</label>
+            <input type="number" class="form-control" id="telefono"
+            name="telefono"
+            [(ngModel)]="alumno.telefono"> -->
           </div>
 
           <div class="col-12  col-md-6 mb-3">
-            <a name="" id="" class="btn btn-sm btn-primary h-full" [routerLink]="['/alumnos/editar',alumno.id,'acudientes']" routerLinkActive="router-link-active"  role="button">Ver Acudientes</a>
+            <a mat-raised-button color="accent" [routerLink]="['/alumnos/editar',alumno.id,'acudientes']" routerLinkActive="router-link-active"  role="button">Ver Acudientes</a>
           </div>
 
           <div class="col-12 mb-3 text-center">
-            <input type="submit" class="w-50 btn btn-success" >
+            <button type="submit"  mat-raised-button color="primary" >Actualizar</button>
           </div>
 
 
@@ -138,7 +263,7 @@
 
       </div>
 
-      
+
 
 
       {{ alumno | json }}

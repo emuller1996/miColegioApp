@@ -1,10 +1,9 @@
 .card-alumno{
-    background-color: #f8fdff;
+    background-color: #daedff;
 }
 
 .card-alumno:hover{
-    background-color: #def5ff;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 3px 2px;}
+    background-color: #d0f0fd;
+    box-shadow: rgba(61, 8, 21, 0.3) 0px 0px 3px 2px;}
 
-.card-alumno:hover div{
-color: #1f4078;}
+

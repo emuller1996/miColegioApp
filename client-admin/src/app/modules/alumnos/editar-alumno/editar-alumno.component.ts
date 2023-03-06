@@ -14,7 +14,7 @@ export class EditarAlumnoComponent implements OnInit {
   alumno:AlumnoModel;
   indice:number;
 
- 
+
 
   constructor(
     private alumnoService:AlumnoService,
@@ -29,14 +29,14 @@ export class EditarAlumnoComponent implements OnInit {
       this.alumno.fechaNacimiento = this.alumno.fechaNacimiento.toString().substring(0,10);
       console.log(data)
 
-      
+
     })
     console.log(this.alumno);
   }
 
 
   onUpdateAlumno():void{
-    this.alumno.fechaNacimiento = this.alumno.fechaNacimiento+'T00:00:00.000Z';
+
     this.alumno.id=0;
     this.alumnoService.putAlumno(this.alumno,this.indice).subscribe({
       next : (data) => {

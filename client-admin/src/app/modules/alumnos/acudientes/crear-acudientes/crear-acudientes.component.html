@@ -8,7 +8,7 @@
           type="button"
           [routerLink]="['/alumnos/editar', alumnoId, 'acudientes']"
           routerLinkActive="router-link-active"
-          class="align-items-center float-end btn btn-sm btn-danger"
+          mat-raised-button color="warn"
         >
           <i class="fa-solid fa-chevron-left"></i
         ></a>
@@ -20,105 +20,121 @@
       <form action="" (ngSubmit)="onSaveAcudiente()" >
         <div class="row align-items-end">
           <div class="col-12 col-md-6 mb-3">
-            <label for="nombres" class="form-label">Nombres</label>
-            <input
-              type="text"
-              class="form-control"
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Nombres</mat-label>
+              <input matInput
               id="nombres"
               name="nombres"
-              [(ngModel)]="acudienteInser.nombres"
-            />
+              [(ngModel)]="acudienteInser.nombres">
+            </mat-form-field>
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="apellidos" class="form-label">Apellidos</label>
-            <input
-              type="text"
-              class="form-control"
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Apellidos</mat-label>
+              <input matInput
               id="apellidos"
               name="apellidos"
-              [(ngModel)]="acudienteInser.apellidos"
-            />
+              [(ngModel)]="acudienteInser.apellidos">
+            </mat-form-field>
+
           </div>
 
           <div class="col-12 mb-3">
-            <label for="correo" class="form-label">Correo</label>
-            <input
-              type="text"
-              class="form-control"
+
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Correo</mat-label>
+              <input matInput
               id="correo"
               name="correo"
-              [(ngModel)]="acudienteInser.correo"
-            />
+              [(ngModel)]="acudienteInser.correo">
+            </mat-form-field>
+
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="tipoDocumento" class="form-label">Tipo Documento</label>
-            <select
-              id="tipoDocumento"
-              class="form-select"
-              aria-label="Default select example"
-              name="tipoDocumento"
-              [(ngModel)]="acudienteInser.tipoDocumento"
-            >
-              <option selected>SELECCIONE EL TIPO DE DOCUMENTO</option>
-              <option ngValue="CC">CC : CEDULA DE CUIDADANIA.</option>
-              <option value="TI">TI : TARJETA DE IDENTIDAD.</option>
-              <option value="RC">RC : REGISTRO CIVIL.</option>
-            </select>
+
+
+
+            <mat-form-field appearance="fill" class="w-100" >
+              <mat-label>Tipo Documento</mat-label>
+              <mat-select
+                id="tipoDocumento"
+                name="tipoDocumento"
+                [(ngModel)]="acudienteInser.tipoDocumento">
+                <mat-option  value='CC'>CC : CEDULA DE CUIDADANIA.</mat-option>
+                <mat-option  value='TI'>TI : TARJETA DE IDENTIDAD. </mat-option>
+                <mat-option  value='RC'>RC : REGISTRO CIVIL. </mat-option>
+
+
+              </mat-select>
+            </mat-form-field>
+
           </div>
           <div class="col-12 col-md-6 mb-3">
-            <label for="numeroDocumento" class="form-label"
-              >Numero Documento</label
-            >
-            <input
-              type="number"
-              class="form-control"
-              id="numeroDocumento"
-              name="numeroDocumento"
-              [(ngModel)]="acudienteInser.numeroDocumento"
-            />
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Numero Documento</mat-label>
+              <input matInput
+                type="number"
+                id="numeroDocumento"
+                name="numeroDocumento"
+                [(ngModel)]="acudienteInser.numeroDocumento">
+            </mat-form-field>
+
+
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="parentesco" class="form-label">Parentesco</label>
-            <input
-              type="text"
-              class="form-control"
-              id="parentesco"
-              name="parentesco"
-              [(ngModel)]="acudienteInser.parentesco"
-            />
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Numero Documento</mat-label>
+              <input matInput
+                type="text"
+                id="parentesco"
+                name="parentesco"
+              [(ngModel)]="acudienteInser.parentesco">
+            </mat-form-field>
+
           </div>
 
           <div class="col-12 col-md-6 mb-3">
-            <label for="telefono" class="form-label">Telefono</label>
-            <input
-              type="number"
-              class="form-control"
-              id="telefono"
-              name="telefono"
-              [(ngModel)]="acudienteInser.telefono"
-            />
+
+
+            <mat-form-field class="w-100 example-full-width">
+              <mat-label>Telefono</mat-label>
+              <input matInput
+                type="number"
+                id="telefono"
+                name="telefono"
+              [(ngModel)]="acudienteInser.telefono">
+            </mat-form-field>
+
           </div>
 
           <div class="col-12 col-md-6 mb-3">
 
             <div class="form-check form-switch">
-              <input 
+
+              <mat-checkbox class="example-margin"
+              color="primary"
               id="esPrincipal"
               name="esPrincipal"
-              [(ngModel)]="acudienteInser.esPrincipal"
-              class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-              <label class="form-check-label" for="flexSwitchCheckChecked">es Principal?</label>
+              [(ngModel)]="acudienteInser.esPrincipal">
+              es Principal?
+              </mat-checkbox>
+
             </div>
-            
+
           </div>
 
           <div class="col-12  mb-3">
 
-            <input type="submit" class="btn btn-primary" value="Guardar Acudiente">
-            
+            <button mat-raised-button color="primary" type="submit">Guardar Acudiente</button>
+
           </div>
         </div>
       </form>

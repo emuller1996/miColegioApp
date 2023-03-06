@@ -18,11 +18,11 @@ export class CrearAlumnosComponent {
   formAlumno = new FormGroup({
     nombres : new FormControl('',[Validators.required]),
     apellidos : new FormControl('',[Validators.required]),
-    correo : new FormControl('',[Validators.required]),
+    correo : new FormControl('',[Validators.required,Validators.email]),
     tipoDocumento : new FormControl('',[Validators.required]),
     numeroDocumento : new FormControl('',[Validators.required]),
     genero : new FormControl('',[Validators.required]),
-    fechaNacimiento : new FormControl('',[Validators.required]), 
+    fechaNacimiento : new FormControl('',[Validators.required]),
     departamentoNacimiento : new FormControl('',[Validators.required]),
     ciudadNacimiento : new FormControl('',[Validators.required]),
     direccionResidencia : new FormControl('',[Validators.required]),
@@ -37,7 +37,7 @@ export class CrearAlumnosComponent {
 
   });
 
-  constructor( 
+  constructor(
     private alumnoService:AlumnoService,
     private router :Router
   ){}
@@ -47,8 +47,8 @@ export class CrearAlumnosComponent {
 
     let date = new Date();
     console.log(date.toISOString());
-    this.formAlumno.value.fechaNacimiento = this.formAlumno.value.fechaNacimiento+'T00:00:00.000Z';
-
+   /*  this.formAlumno.value.fechaNacimiento = this.formAlumno.value.fechaNacimiento+'T00:00:00.000Z';
+ */
     console.log(this.formAlumno.value);
 
     this.alumnoService.postAlumno(this.formAlumno.value).subscribe(data=>{
