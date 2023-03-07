@@ -8,7 +8,7 @@ export class Alumno extends Entity {
     id: true,
     generated: true,
   })
-  id?: string;
+  id?: number;
 
   @property({
     type: 'string',
@@ -80,7 +80,7 @@ export class Alumno extends Entity {
   })
   telefono: number;
 
-  @hasMany(() => Acudiente)
+  @hasMany(() => Acudiente, {name: 'ACUDIENTES'})
   ACUDIENTES: Acudiente[];
 
   constructor(data?: Partial<Alumno>) {

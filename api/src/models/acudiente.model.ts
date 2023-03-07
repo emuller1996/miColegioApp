@@ -6,7 +6,7 @@ import {Alumno} from './alumno.model';
     foreignKeys : {
       FK_ACUDIENTE_ID_ALUMNO : {
         name : 'FK_ACUDIENTE_ID_ALUMNO',
-        entity : 'Alumno',
+        entity : Alumno,
         entityKey : 'id',
         foreignKey : 'alumnoId'
       }

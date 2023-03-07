@@ -39,7 +39,7 @@ export class AlumnoAcudienteController {
     },
   })
   async find(
-    @param.path.string('id') id: string,
+    @param.path.string('id') id: number,
     @param.query.object('filter') filter?: Filter<Acudiente>,
   ): Promise<Acudiente[]> {
     return this.alumnoRepository.ACUDIENTES(id).find(filter);
@@ -79,7 +79,7 @@ export class AlumnoAcudienteController {
     },
   })
   async patch(
-    @param.path.string('id') id: string,
+    @param.path.string('id') id: number,
     @requestBody({
       content: {
         'application/json': {
@@ -102,7 +102,7 @@ export class AlumnoAcudienteController {
     },
   })
   async delete(
-    @param.path.string('id') id: string,
+    @param.path.string('id') id: number,
     @param.query.object('where', getWhereSchemaFor(Acudiente)) where?: Where<Acudiente>,
   ): Promise<Count> {
     return this.alumnoRepository.ACUDIENTES(id).delete(where);

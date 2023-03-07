@@ -1,15 +1,17 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
+const dotenv = require('dotenv').config();
+
 
 const config = {
   name: 'mysql',
   connector: 'mysql',
   url: '',
-  host: 'localhost',
-  port: 3306,
-  user: 'root',
-  password: '',
-  database: 'mi_colegio_db'
+  host: process.env.MYSQLHOST || 'containers-us-west-30.railway.app' || 'localhost' ,
+  port:process.env.MYSQLPORT || 7173,
+  user: process.env.root ||'root',
+  password:process.env.MYSQLPASSWORD|| 'mnQt8BH1Z1y8NyPHmH0R',
+  database: process.env.MYSQLDATABASE ||'railway'
 };
 
 // Observe application's life cycle to disconnect the datasource when
